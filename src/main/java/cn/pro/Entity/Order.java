@@ -14,8 +14,8 @@ public class Order {
     private int stuStatus;
     private double price;
     private int backStatus;
-    private String originPlace;
-    private String newPlace;
+    private int originPlace;
+    private int newPlace;
     private int judStatus;
     private int status;
     private Date date;
