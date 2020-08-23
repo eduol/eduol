@@ -10,4 +10,5 @@ public class Active {
     private String name;
     private Date startTime;
     private Date endTime;
+    private int type;
 }

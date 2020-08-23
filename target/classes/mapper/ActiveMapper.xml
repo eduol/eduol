@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pro.mapper.ActiveMapper">
+    <select id="findAll" resultType="Active">
+        SELECT  * FROM active WHERE type=#{type}
+    </select>
+    <select id="findById" resultType="Active">
+        SELECT * FROM active WHERE id = #{id}
+    </select>
+    <insert id="addActive" parameterType="Active">
+        INSERT INTO active(name,startTime,endTime,type) VALUES(#{name},#{startTime},#{endTime},#{type})
+    </insert>
+    <update id="updActive" parameterType="Active">
+        UPDATE active SET name=#{name},startTime=#{startTime},endTime=#{endTime},type=#{type} WHERE id = #{id}
+    </update>
+</mapper>

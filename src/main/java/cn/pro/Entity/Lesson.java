@@ -14,4 +14,5 @@ public class Lesson {
     private int type;
     private int fieldId;
     private int lesTime;
+    private String path;
 }

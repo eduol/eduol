@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pro.mapper.LessonMapper">
+    <select id="findByType" resultType="Lesson">
+        SELECT * FROM lesson WHERE type = #{type}
+    </select>
+    <select id="findById" resultType="Lesson">
+        SELECT * FROM lesson WHERE id = #{id}
+    </select>
+    <insert id="addLesson" parameterType="Lesson">
+        INSERT INTO lesson(code,name,grades,price,personNum,type,fieldId,path) VALUES(#{code},#{name},#{grades},#{price},#{personNum},#{type},#{fieldId},#{path})
+    </insert>
+    <update id="updLesson" parameterType="Lesson">
+        UPDATE lesson set code=#{code},name=#{name},grades=#{grades},price=${price},personNum=#{personNum},type=#{type},fieldId=#{fieldId} WHERE id=#{id}
+    </update>
+    <update id="pauseLesson" parameterType="Lesson">
+        UPDATE lesson set status=#{status} WHERE id=#{id}
+    </update>
+    <update id="consumeLesson" parameterType="Lesson">
+        UPDATE lesson set lesTime=lesTime+1 WHERE id=#{id}
+    </update>
+</mapper>

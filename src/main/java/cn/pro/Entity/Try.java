@@ -10,4 +10,5 @@ public class Try {
     private String name;
     private Date startTime;
     private Date endTime;
+    private int type;
 }
