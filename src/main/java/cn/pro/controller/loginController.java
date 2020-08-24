@@ -17,14 +17,9 @@ public class loginController {
     @Autowired
     UserService userService;
 
-    @ApiOperation(value = "登录接口",httpMethod = "GET")
-    @RequestMapping("/dologin")
-    public String login(){
-        return "index.html";
-    }
 
     @ApiOperation(value = "登录",httpMethod = "GET")
-    @RequestMapping("/login")
+    @RequestMapping("/logins")
     public Dto log(@RequestParam(value = "userName") String userName,@RequestParam(value = "password")  String password){
         User user = userService.login(userName,password);
         if (user!=null){

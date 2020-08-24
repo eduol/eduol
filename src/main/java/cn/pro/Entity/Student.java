@@ -10,5 +10,5 @@ public class Student {
     private int ifNew;
     private String gradeDetails;
     private String grades;
-
+    private int fieldId;
 }

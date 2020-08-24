@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="">
-
+<mapper namespace="cn.pro.mapper.OrderMapper">
+    <select id="findAllNorOrder" resultType="Order">
+        SELECT * FROM `order` WHERE `status` = '1'
+        <if test="ordFrom!=null and ordFrom!=''">
+            AND ordFrom LIKE CONCAT('%',#{ordFrom},'%')
+        </if>
+        <if test="phone!=null and phone!=''">
+            AND phone LIKE CONCAT('%',#{phone},'%')
+        </if>
+        <if test="date!=null">
+            AND date LIKE CONCAT('%',#{date},'%')
+        </if>
+    </select>
+    <select id="findAllBackOrder" resultType="Order">
+        SELECT * FROM `order` WHERE `status` = '2'
+        <if test="phone!=null and phone!=''">
+            AND phone LIKE CONCAT('%',#{phone},'%')
+        </if>
+        <if test="status!=0">
+            AND status LIKE CONCAT('%',#{status},'%')
+        </if>
+    </select>
+    <select id="findAllChangePlace" resultType="Order">
+        SELECT * FROM `order` WHERE `status` = '3'
+    </select>
+    <select id="findOrderById" resultType="Order">
+        SELECT * FROM `order` WHERE id = #{id}
+    </select>
+    <update id="backOrder" parameterType="Order">
+        UPDATE `order` SET backStatus = '1' WHERE id = #{id}
+    </update>
+    <update id="judOrder" parameterType="Order">
+        UPDATE `order` SET judStatus=#{judStatus}
+        <if test="judStatus==1">
+            ,originPlace=newPlace
+        </if>
+         WHERE id=#{id}
+    </update>
+    <update id="changeOrder" parameterType="Order">
+        UPDATE `order` SET teacher=#{teacher},originPlace=#{originPlace},newPlace=#{newPlace} WHERE id=#{id}
+    </update>
 </mapper>

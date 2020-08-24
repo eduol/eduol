@@ -8,4 +8,7 @@
     <select id="login" resultType="User">
         SELECT * FROM user where userName=#{userName} and password=#{password}
     </select>
+    <select id="findAll" resultType="User">
+        SELECT * FROM user WHERE 1=1
+    </select>
 </mapper>
