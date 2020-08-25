@@ -19,8 +19,8 @@
         <if test="phone!=null and phone!=''">
             AND phone LIKE CONCAT('%',#{phone},'%')
         </if>
-        <if test="status!=0">
-            AND status LIKE CONCAT('%',#{status},'%')
+        <if test="backStatus!=null">
+            AND backStatus = #{backStatus}
         </if>
     </select>
     <select id="findAllChangePlace" resultType="Order">
@@ -40,6 +40,6 @@
          WHERE id=#{id}
     </update>
     <update id="changeOrder" parameterType="Order">
-        UPDATE `order` SET teacher=#{teacher},originPlace=#{originPlace},newPlace=#{newPlace} WHERE id=#{id}
+        UPDATE `order` SET teacher=#{teacher},originPlace=#{originPlace},newPlace=#{newPlace},judStatus='0' WHERE id=#{id}
     </update>
 </mapper>

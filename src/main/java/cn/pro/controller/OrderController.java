@@ -33,4 +33,61 @@ public class OrderController {
         PageInfo<Order> page = new PageInfo<>(orderList);
         return DtoUtil.returnSuccess("成功",page);
     }
+
+    @ApiOperation(value = "查询所有退费订单",httpMethod = "POST")
+    @RequestMapping(value = "/findAllBackOrder")
+    public Dto findAllBackOrder(@RequestParam(value = "start",defaultValue = "0")int start, @RequestParam(value = "size",defaultValue = "2")int size,@RequestParam(value = "phone",required = false)String phone,@RequestParam(value = "backStatus",required = false)int backStatus){
+        PageHelper.startPage(start, size,"id desc");
+        List<Order> orderList = orderService.findAllBackOrder(phone,backStatus);
+        PageInfo<Order> page = new PageInfo<>(orderList);
+        return DtoUtil.returnSuccess("成功",page);
+    }
+
+    @ApiOperation(value = "查询所有转校订单",httpMethod = "POST")
+    @RequestMapping(value = "/findAllChangePlace")
+    public Dto findAllChangePlace(@RequestParam(value = "start",defaultValue = "0")int start, @RequestParam(value = "size",defaultValue = "2")int size){
+        PageHelper.startPage(start, size,"id desc");
+        List<Order> orderList = orderService.findAllChangePlace();
+        PageInfo<Order> page = new PageInfo<>(orderList);
+        return DtoUtil.returnSuccess("成功",page);
+    }
+
+    @ApiOperation(value = "根据Id查订单",httpMethod = "POST")
+    @RequestMapping(value = "/findOrderById")
+    public Dto findOrderById(@RequestParam(value = "id",required = false)int id){
+        Order order = orderService.findOrderById(id);
+        return DtoUtil.returnSuccess("成功",order);
+    }
+
+    @ApiOperation(value = "根据Id退费",httpMethod = "POST")
+    @RequestMapping(value = "/backOrder")
+    public Dto backOrder(@RequestParam(value = "id")int id){
+        int num = orderService.backOrder(id);
+        if(num>0){
+            return DtoUtil.returnSuccess("成功");
+        }else {
+            return DtoUtil.returnFail("失败","114514");
+        }
+    }
+
+    @ApiOperation(value = "审核转校",httpMethod = "POST")
+    @RequestMapping(value = "/judOrder")
+    public Dto judOrder(@RequestParam(value = "id")int id,@RequestParam(value = "status")int status){
+        int num = orderService.judOrder(id,status);
+        if(num>0){
+            return DtoUtil.returnSuccess("成功");
+        }else {
+            return DtoUtil.returnFail("失败","114514");
+        }
+    }
+    @ApiOperation(value = "新增转校",httpMethod = "POST")
+    @RequestMapping(value = "/changeOrder")
+    public Dto changeOrder(@RequestParam(value = "id")int id,@RequestParam(value = "teacher")String teacher,@RequestParam(value = "originPlace")int originPlace,@RequestParam(value = "newPlace")int newPlace){
+        int num = orderService.changeOrder(teacher,originPlace,newPlace,id);
+        if(num>0){
+            return DtoUtil.returnSuccess("成功");
+        }else {
+            return DtoUtil.returnFail("失败","114514");
+        }
+    }
 }

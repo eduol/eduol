@@ -19,8 +19,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> findAllBackOrder(String phone, int status) {
-        return orderMapper.findAllBackOrder(phone,status);
+    public List<Order> findAllBackOrder(String phone, int backStatus) {
+        return orderMapper.findAllBackOrder(phone,backStatus);
     }
 
     @Override

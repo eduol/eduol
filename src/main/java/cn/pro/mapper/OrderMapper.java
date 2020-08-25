@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface OrderMapper {
     List<Order> findAllNorOrder(@Param(value = "ordFrom")String ordFrom,@Param(value = "phone")String phone,@Param(value = "date") String date);
-    List<Order> findAllBackOrder(@Param(value = "phone")String phone,@Param(value = "status")int status);
+    List<Order> findAllBackOrder(@Param(value = "phone")String phone,@Param(value = "backStatus")int backStatus);
     List<Order> findAllChangePlace();
     Order findOrderById(@Param(value = "id")int id);
     int backOrder(@Param(value = "id")int id);
