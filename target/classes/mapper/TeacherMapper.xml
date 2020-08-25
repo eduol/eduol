@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pro.mapper.TeacherMapper">
+    <insert id="addTeacher" parameterType="Teacher">
+        INSERT INTO teacher(name,phone,fieldId,type,path) VALUES(#{name},#{phone},#{fieldId},#{type},#{path})
+    </insert>
+    <select id="findTeacherById" resultType="Teacher">
+        SELECT * FROM teacher WHERE id=#{id}
+    </select>
+    <select id="findAllTeacher" resultType="Teacher">
+        SELECT * FROM teacher WHERE 1=1
+    </select>
+</mapper>

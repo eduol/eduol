@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pro.mapper.FieldMapper">
+    <insert id="addFiled" parameterType="Filed">
+        INSERT INTO field(name,address,phone) VALUES (#{name},#{address},#{phone})
+    </insert>
+    <select id="findAllFiled" resultType="Filed">
+        SELECT  * FROM field WHERE 1=1
+    </select>
+    <update id="updFiled" parameterType="Filed">
+        UPDATE field set name=#{name},address=#{address},phone=#{phone} WHERE id=#{id}
+    </update>
+    <select id="findFiledById" resultType="Filed">
+        SELECT * FROM field WHERE id=#{id}
+    </select>
+</mapper>

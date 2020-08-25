@@ -16,9 +16,11 @@ D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\controller\UserController.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\OrderService.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\TryService.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\mapper\LessonMapper.java
+D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\mapper\FieldMapper.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\config\ExceptionController.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\Entity\Dto.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\impl\ActiveServiceImpl.java
+D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\impl\FiledServiceImpl.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\utils\DtoUtil.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\mapper\TryMapper.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\StudentService.java
@@ -29,9 +31,11 @@ D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\config\WebMvcConfig.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\Entity\Teacher.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\impl\UserServiceImpl.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\config\Swagger2.java
+D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\FiledService.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\impl\StudentServiceImpl.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\controller\lessonController.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\Entity\Order.java
+D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\controller\FiledController.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\Entity\Student.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\controller\ActiveController.java
 D:\WorkSpace\Boot\eduol\src\main\java\cn\pro\service\impl\OrderServiceImpl.java

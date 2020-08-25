@@ -11,4 +11,5 @@ public class Teacher {
     private String grade;
     private String subjects;
     private String name;
+    private String path;
 }
